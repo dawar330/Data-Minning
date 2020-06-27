@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 
 
@@ -18,7 +17,7 @@ Z2 = dataset2['Price'].to_numpy()
 # Reshape and normalize data
 X = X.reshape(-1, 1)
 Y = Y.reshape(-1, 1)
-print(X)
+
 X = preprocessing.minmax_scale(X)
 Y = preprocessing.minmax_scale(Y)
 
@@ -30,11 +29,10 @@ X2 = preprocessing.minmax_scale(X2)
 Y2 = preprocessing.minmax_scale(Y2)
 Z2 = preprocessing.minmax_scale(Z2)
 test = preprocessing.minmax_scale(test)
-model = LinearRegression()
-model.fit(X, Y)
 
 
-#
+
+
 def gradient_descent_single_feature(x, y):
     Theta0 = Theta1 = 0
     iterations = 10000
@@ -114,4 +112,4 @@ def gradient_descent_Multiple_feature(x, y, z):
 
 
 gradient_descent_Multiple_feature(X2, Y2, Z2)
-gradient_descent_single_feature(X, Y)
+#gradient_descent_single_feature(X, Y)
